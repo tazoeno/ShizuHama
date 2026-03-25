@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>浜松キャンパス　4月スケジュール 2026</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic UI", sans-serif; background: #f5f4f0; color: #1a1a1a; padding: 24px; }
+h1 { font-size: 20px; font-weight: 600; margin-bottom: 6px; }
+.subtitle { font-size: 13px; color: #666; margin-bottom: 16px; }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 20px; }
+.leg-item { display: flex; align-items: center; gap: 5px; font-size: 12px; color: #555; }
+.leg-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.week-label { font-size: 12px; font-weight: 600; color: #888; margin-bottom: 6px; letter-spacing: 0.05em; }
+.grid-wrap { overflow-x: auto; margin-bottom: 20px; }
+.grid { display: grid; border: 1px solid #ddd; border-radius: 10px; overflow: hidden; background: #fff; min-width: 620px; }
+.g5 { grid-template-columns: 80px repeat(4, 1fr); }
+.g6 { grid-template-columns: 80px repeat(5, 1fr); }
+.grid-header { background: #f0ede8; font-size: 12px; font-weight: 600; color: #555; padding: 8px 10px; border-bottom: 1px solid #ddd; text-align: center; }
+.grid-header.time-col { text-align: left; }
+.day-label { font-size: 13px; font-weight: 600; color: #222; }
+.day-sub { font-size: 11px; color: #888; }
+.grid-cell { padding: 7px 8px; border-bottom: 1px solid #eee; border-left: 1px solid #eee; min-height: 56px; vertical-align: top; }
+.grid-cell.time-label { border-left: none; background: #faf9f7; color: #888; font-size: 11px; display: flex; align-items: flex-start; padding-top: 10px; }
+.grid-cell.empty { background: #fff; }
+.event { border-radius: 7px; padding: 5px 8px; margin-bottom: 5px; cursor: pointer; transition: opacity 0.15s, transform 0.1s; line-height: 1.45; }
+.event:hover { opacity: 0.82; transform: translateY(-1px); }
+.event-title { font-weight: 600; font-size: 11px; }
+.event-sub { font-size: 10px; opacity: 0.85; margin-top: 2px; }
+.badge-row { display: flex; gap: 3px; flex-wrap: wrap; margin-top: 4px; }
+.badge { font-size: 9px; padding: 1px 6px; border-radius: 10px; white-space: nowrap; }
+
+.ev-intl { background: #dceefa; color: #0a3d6b; }
+.ev-intl .badge { background: #aed4f2; color: #0a3d6b; }
+.ev-dept { background: #dff0cb; color: #245210; }
+.ev-dept .badge { background: #b8dda0; color: #245210; }
+.ev-lang { background: #fde9c0; color: #5a3300; }
+.ev-lang .badge { background: #f8cc82; color: #5a3300; }
+.ev-all { background: #e8e5fc; color: #2e2470; }
+.ev-all .badge { background: #c5bff7; color: #2e2470; }
+
+.detail-panel { background: #fff; border: 1px solid #ddd; border-radius: 10px; padding: 16px 20px; margin-top: 4px; display: none; }
+.detail-panel.show { display: block; }
+.detail-title { font-size: 16px; font-weight: 600; color: #1a1a1a; margin-bottom: 12px; }
+.detail-row { display: flex; gap: 10px; margin-bottom: 8px; font-size: 13px; }
+.detail-label { color: #888; min-width: 54px; flex-shrink: 0; }
+.detail-val { color: #222; }
+.participant-badges { display: flex; gap: 4px; flex-wrap: wrap; }
+.p-badge { font-size: 11px; padding: 3px 10px; border-radius: 12px; }
+.p-yes { background: #dff0cb; color: #245210; }
+.p-opt { background: #fde9c0; color: #5a3300; }
+
+.note { font-size: 12px; color: #555; margin-top: 16px; padding: 8px 12px; background: #e8e5fc; border-radius: 7px; color: #2e2470; }
+</style>
+</head>
+<body>
+<h1>浜松キャンパス　4月スケジュール 2026</h1>
+<div class="subtitle">国際・留学生担当分 まとめ　※イベントをクリックすると詳細が表示されます</div>
+
+<div class="legend">
+  <div class="leg-item"><div class="leg-dot" style="background:#378ADD"></div>国際課主体</div>
+  <div class="leg-item"><div class="leg-dot" style="background:#639922"></div>部局主体</div>
+  <div class="leg-item"><div class="leg-dot" style="background:#BA7517"></div>日本語・言語</div>
+  <div class="leg-item"><div class="leg-dot" style="background:#534AB7"></div>全学行事</div>
+</div>
+
+<!-- Week 1 -->
+<div class="week-label">第1週　4/1（水）〜 4/4（土）</div>
+<div class="grid-wrap">
+<div class="grid g5">
+  <div class="grid-header time-col">時間帯</div>
+  <div class="grid-header"><div class="day-label">4/1 水</div></div>
+  <div class="grid-header"><div class="day-label">4/2 木</div></div>
+  <div class="grid-header"><div class="day-label">4/3 金</div></div>
+  <div class="grid-header"><div class="day-label">4/4 土</div></div>
+
+  <div class="grid-cell time-label">終日・午前</div>
+  <div class="grid-cell">
+    <div class="event ev-intl" onclick="showDetail('d1')">
+      <div class="event-title">入寮</div>
+      <div class="event-sub">国際交流会館・あけぼの寮</div>
+      <div class="badge-row"><span class="badge">学部</span><span class="badge">修士</span><span class="badge">博士</span><span class="badge">研究生</span><span class="badge">交換留</span></div>
+    </div>
+  </div>
+  <div class="grid-cell">
+    <div class="event ev-intl" onclick="showDetail('d2')">
+      <div class="event-title">諸手続き</div>
+      <div class="badge-row"><span class="badge">交換留学生</span></div>
+    </div>
+  </div>
+  <div class="grid-cell">
+    <div class="event ev-all" onclick="showDetail('d3')">
+      <div class="event-title">留学生オリエンテーション</div>
+      <div class="event-sub">10:00〜12:00 工学部7-11</div>
+      <div class="badge-row"><span class="badge">全員参加</span></div>
+    </div>
+  </div>
+  <div class="grid-cell">
+    <div class="event ev-all" onclick="showDetail('d4')">
+      <div class="event-title">入学式</div>
+      <div class="event-sub">静岡市</div>
+      <div class="badge-row"><span class="badge">学部</span><span class="badge">修士</span><span class="badge">博士</span></div>
+    </div>
+  </div>
+
+  <div class="grid-cell time-label">午後</div>
+  <div class="grid-cell empty"></div>
+  <div class="grid-cell empty"></div>
+  <div class="grid-cell">
+    <div class="event ev-intl" onclick="showDetail('d5')">
+      <div class="event-title">ABP 4月ガイダンス</div>
+      <div class="event-sub">14:00〜14:45 静岡（zoom）</div>
+      <div class="badge-row"><span class="badge">学部新入生</span></div>
+    </div>
+    <div class="event ev-intl" onclick="showDetail('d6')">
+      <div class="event-title">ABP-JCガイダンス+GC</div>
+      <div class="event-sub">15:00〜16:30 zoom</div>
+      <div class="badge-row"><span class="badge">学部</span><span class="badge">修士希望者</span></div>
+    </div>
+  </div>
+  <div class="grid-cell empty"></div>
+</div>
+</div>
+
+<!-- Week 2 -->
+<div class="week-label">第2週　4/6（月）〜 4/10（金）</div>
+<div class="grid-wrap">
+<div class="grid g6">
+  <div class="grid-header time-col">時間帯</div>
+  <div class="grid-header"><div class="day-label">4/6 月</div></div>
+  <div class="grid-header"><div class="day-label">4/7 火</div></div>
+  <div class="grid-header"><div class="day-label">4/8 水</div></div>
+  <div class="grid-header"><div class="day-label">4/9 木</div></div>
+  <div class="grid-header"><div class="day-label">4/10 金</div></div>
+
+  <div class="grid-cell time-label">午前</div>
+  <div class="grid-cell">
+    <div class="event ev-dept" onclick="showDetail('d7')">
+      <div class="event-title">情報学部新入生ガイダンス</div>
+      <div class="event-sub">9:00〜15:00 各教室</div>
+      <div class="badge-row"><span class="badge">社会・行動・科学科</span></div>
+    </div>
+  </div>
+  <div class="grid-cell">
+    <div class="event ev-dept" onclick="showDetail('d8')">
+      <div class="event-title">情報学部保健ガイダンス</div>
+      <div class="event-sub">午前 佐鳴会館</div>
+      <div class="badge-row"><span class="badge">情報生</span></div>
+    </div>
+  </div>
+  <div class="grid-cell empty"></div>
+  <div class="grid-cell">
+    <div class="event ev-dept" onclick="showDetail('d9')">
+      <div class="event-title">工学部新入生ガイダンス</div>
+      <div class="event-sub">9:00〜12:30 各学科</div>
+      <div class="badge-row"><span class="badge">機械</span><span class="badge">電気電子</span><span class="badge">電子物質</span><span class="badge">化バイオ</span><span class="badge">数理</span></div>
+    </div>
+    <div class="event ev-dept" onclick="showDetail('d10')">
+      <div class="event-title">情報学専攻ガイダンス</div>
+      <div class="event-sub">10:00〜12:00 共通棟31</div>
+      <div class="badge-row"><span class="badge">情報修士</span></div>
+    </div>
+    <div class="event ev-dept" onclick="showDetail('d11')">
+      <div class="event-title">ノートPCガイダンス</div>
+      <div class="event-sub">各学科・時間帯</div>
+      <div class="badge-row"><span class="badge">社会・科学・行動</span></div>
+    </div>
+  </div>
+  <div class="grid-cell">
+    <div class="event ev-dept" onclick="showDetail('d12')">
+      <div class="event-title">PCリテラシーセミナー</div>
+      <div class="event-sub">午前 共通棟21</div>
+      <div class="badge-row"><span class="badge">情報生</span></div>
+    </div>
+  </div>
+
+  <div class="grid-cell time-label">午後</div>
+  <div class="grid-cell">
+    <div class="event ev-lang" onclick="showDetail('d13')">
+      <div class="event-title">日本語プレイスメントテスト</div>
+      <div class="event-sub">13:30〜15:30 工7-11</div>
+      <div class="badge-row"><span class="badge">希望者（学部除く）</span></div>
+    </div>
+    <div class="event ev-dept" onclick="showDetail('d14')">
+      <div class="event-title">新入生ガイダンス（創造）</div>
+      <div class="event-sub">14:00〜</div>
+    </div>
+    <div class="event ev-dept" onclick="showDetail('d15')">
+      <div class="event-title">新入生ガイダンス（光医工）</div>
+      <div class="event-sub">16:00〜</div>
+    </div>
+  </div>
+  <div class="grid-cell empty"></div>
+  <div class="grid-cell">
+    <div class="event ev-intl" onclick="showDetail('d16')">
+      <div class="event-title">ABPインターンシップガイダンス</div>
+      <div class="event-sub">14:00〜15:00 日本語教室1</div>
+      <div class="badge-row"><span class="badge">2025入学 ABP学部留</span></div>
+    </div>
+  </div>
+  <div class="grid-cell">
+    <div class="event ev-dept" onclick="showDetail('d17')">
+      <div class="event-title">工学専攻新入生ガイダンス</div>
+      <div class="event-sub">15:00〜17:00 各学科</div>
+      <div class="badge-row"><span class="badge">機械</span><span class="badge">電気電子</span><span class="badge">電子物質</span><span class="badge">化バイオ</span><span class="badge">数理</span></div>
+    </div>
+  </div>
+  <div class="grid-cell empty"></div>
+</div>
+</div>
+
+<!-- Apr 13 onwards -->
+<div class="week-label">中旬以降</div>
+<div class="grid-wrap">
+<div class="grid g5">
+  <div class="grid-header time-col">日付</div>
+  <div class="grid-header"><div class="day-label">4/13 月</div></div>
+  <div class="grid-header"><div class="day-label">4月中旬</div></div>
+  <div class="grid-header"><div class="day-label">4/20 月</div></div>
+  <div class="grid-header"><div class="day-label">4/23 木</div></div>
+
+  <div class="grid-cell time-label">行事</div>
+  <div class="grid-cell">
+    <div class="event ev-all" onclick="showDetail('d18')">
+      <div class="event-title">授業開始</div>
+    </div>
+  </div>
+  <div class="grid-cell">
+    <div class="event ev-dept" onclick="showDetail('d19')">
+      <div class="event-title">健康診断</div>
+      <div class="event-sub">保健センター</div>
+      <div class="badge-row"><span class="badge">学科・コースごと</span></div>
+    </div>
+  </div>
+  <div class="grid-cell">
+    <div class="event ev-intl" onclick="showDetail('d20')">
+      <div class="event-title">修士インターンシップガイダンス（英語）</div>
+      <div class="event-sub">10:30〜11:30 工7-11</div>
+      <div class="badge-row"><span class="badge">修士希望者</span><span class="badge">研究生</span><span class="badge">交換留</span></div>
+    </div>
+  </div>
+  <div class="grid-cell">
+    <div class="event ev-intl" onclick="showDetail('d21')">
+      <div class="event-title">防火訓練</div>
+      <div class="event-sub">16:00〜17:00</div>
+      <div class="badge-row"><span class="badge">全員</span></div>
+    </div>
+    <div class="event ev-intl" onclick="showDetail('d22')">
+      <div class="event-title">国際交流会館懇親会</div>
+      <div class="event-sub">18:00〜20:00</div>
+      <div class="badge-row"><span class="badge">全員＋在籍生希望者</span></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Detail panel -->
+<div class="detail-panel" id="detail-panel">
+  <div class="detail-title" id="d-title"></div>
+  <div id="d-body"></div>
+</div>
+
+<div class="note">※ 赤字（未確認）項目あり。4/3オリエンテーションは交換留学生・博士生チューターも参加推奨。</div>
+
+<script>
+const details = {
+  d1: { title: '入寮 — 国際交流会館・あけぼの寮', time: '4/1（水）終日', place: '国際交流会館・あけぼの寮', charge: '会館、留学生係', participants: [['学部新入生','yes'],['修士新入生','yes'],['博士新入生','yes'],['研究生','yes'],['交換留学生','yes']] },
+  d2: { title: '諸手続き', time: '4/2（木）午前', place: '—', charge: '国際課', participants: [['交換留学生','yes']] },
+  d3: { title: '留学生オリエンテーション', time: '4/3（金）10:00〜12:00', place: '工学部7-11', charge: '全員＋留学生係・国際課', participants: [['学部新入生','yes'],['修士新入生','yes'],['博士新入生','yes'],['研究生','yes'],['交換留学生','yes']], note: 'チューター（交換留学生・博士生）も参加推奨' },
+  d4: { title: '入学式', time: '4/4（土）', place: '静岡市', charge: '—', participants: [['学部新入生','yes'],['修士新入生','yes'],['博士新入生','yes']] },
+  d5: { title: 'ABP 4月ガイダンス', time: '4/3（金）14:00〜14:45', place: '静岡 ABP教室1（zoomで浜松）', charge: '案野・袴田・吉田', participants: [['学部新入生','yes']] },
+  d6: { title: 'ABP-JCガイダンス＋静岡GC', time: '4/3（金）15:00〜16:30', place: '浜松からzoom→ABP教室1', charge: '渡邊・袴田・松田', participants: [['学部新入生','yes'],['修士新入生（JCガイダンス希望者）','opt']] },
+  d7: { title: '情報学部新入生ガイダンス', time: '4/6（月）9:00〜15:00', place: '共通棟41（社会）・共通棟31（行動）・共通棟21（科学）', charge: '13:00〜各学科紹介（約10分）', participants: [['社会学科','yes'],['行動情報学科','yes'],['科学科','yes']] },
+  d8: { title: '情報学部保健ガイダンス', time: '4/7（火）午前', place: '佐鳴会館', charge: '—', participants: [['情報生','yes']] },
+  d9: { title: '工学部新入生ガイダンス', time: '4/9（木）9:00〜12:30', place: '各学科教室', charge: '各学科（10〜15分の留学生紹介枠）', participants: [['機械','yes'],['電気電子','yes'],['電子物質','yes'],['化学バイオ','yes'],['数理システム','yes']], note: '赤字（未確認）あり' },
+  d10: { title: '情報学専攻新入生ガイダンス', time: '4/9（木）10:00〜12:00', place: '共通棟31', charge: '10:40〜10:50 留学生紹介', participants: [['情報修士','yes']] },
+  d11: { title: 'ノートPCガイダンス', time: '4/9（木）各学科の時間帯', place: '情報棟13・共通棟21・共通棟31', charge: '—', participants: [['社会学科','yes'],['科学科','yes'],['行動情報学科','yes'],['推奨機種以外','yes']] },
+  d12: { title: 'PCリテラシーセミナー', time: '4/10（金）午前', place: '共通棟21', charge: '—', participants: [['情報生','yes']] },
+  d13: { title: '日本語プレイスメントテスト', time: '4/6（月）13:30〜15:30', place: '工学部7-11', charge: '袴田＋田添', participants: [['修士新入生（希望者）','opt'],['博士新入生（希望者）','opt'],['研究生（希望者）','opt'],['交換留学生（希望者）','opt'],['既在籍生・学部生除く（希望者）','opt']] },
+  d14: { title: '新入生ガイダンス（創造科学技術大学院）', time: '4/6（月）14:00〜', place: '—', participants: [['創造生','yes']] },
+  d15: { title: '新入生ガイダンス（光医工学研究科）', time: '4/6（月）16:00〜', place: '—', participants: [['光医工生','yes']] },
+  d16: { title: 'ABPインターンシップガイダンス', time: '4/8（水）14:00〜15:00', place: '日本語教室1', charge: '袴田＋田添', participants: [['2025年入学 ABP学部留学生','yes']] },
+  d17: { title: '工学専攻新入生ガイダンス', time: '4/9（木）15:00〜17:00', place: '各学科教室', charge: '各担当（10〜15分）', participants: [['機械','yes'],['電気電子','yes'],['電子物質','yes'],['化学バイオ','yes'],['数理システム','yes']], note: '赤字（未確認）あり' },
+  d18: { title: '授業開始', time: '4/13（月）', place: '—', participants: [] },
+  d19: { title: '健康診断', time: '4月中旬', place: '保健センター', participants: [['学部生（学科ごと）','yes'],['修士（コースごと）','yes'],['博士','yes'],['研究生','yes'],['交換留学生','yes']] },
+  d20: { title: '修士インターンシップガイダンス（英語）', time: '4/20（月）10:30〜11:30', place: '工学部7-11', charge: '工学部益子・宮崎・Mobedi・高先生、情報学部白井・後藤先生', participants: [['修士新入生（希望者）','opt'],['研究生（希望者）','opt'],['交換留学生（希望者）','opt'],['2025年10月入学M1生','yes']] },
+  d21: { title: '防火訓練', time: '4/23（木）16:00〜17:00', place: '国際交流会館1号館', charge: '留学生係・袴田＋田添', participants: [['学部新入生','yes'],['修士新入生','yes'],['博士新入生','yes'],['研究生','yes'],['交換留学生','yes']] },
+  d22: { title: '国際交流会館懇親会', time: '4/23（木）18:00〜20:00', place: '国際交流会館1号館', charge: '留学生係・袴田＋田添', participants: [['学部新入生','yes'],['修士新入生','yes'],['博士新入生','yes'],['研究生','yes'],['交換留学生','yes'],['既在籍生（希望者）','opt']] },
+};
+
+function showDetail(id) {
+  const d = details[id];
+  const panel = document.getElementById('detail-panel');
+  document.getElementById('d-title').textContent = d.title;
+  let html = '';
+  if (d.time) html += `<div class="detail-row"><span class="detail-label">日時</span><span class="detail-val">${d.time}</span></div>`;
+  if (d.place) html += `<div class="detail-row"><span class="detail-label">場所</span><span class="detail-val">${d.place}</span></div>`;
+  if (d.charge) html += `<div class="detail-row"><span class="detail-label">担当</span><span class="detail-val">${d.charge}</span></div>`;
+  if (d.participants && d.participants.length) {
+    html += `<div class="detail-row"><span class="detail-label">対象</span><div class="participant-badges">`;
+    d.participants.forEach(([name, type]) => {
+      html += `<span class="p-badge ${type === 'yes' ? 'p-yes' : 'p-opt'}">${name}${type === 'opt' ? '（希望者）' : ''}</span>`;
+    });
+    html += `</div></div>`;
+  }
+  if (d.note) html += `<div style="margin-top:8px;font-size:12px;color:#888;">※ ${d.note}</div>`;
+  document.getElementById('d-body').innerHTML = html;
+  panel.classList.add('show');
+  panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+</script>
+</body>
+</html>
